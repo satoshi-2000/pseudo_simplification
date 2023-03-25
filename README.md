@@ -20,13 +20,17 @@ pip install datasets
 pip install SentencePiece
 ```
 
+## fine-tuning
+次のような形でGPT-2モデルのfine-tuningを実行します。ここで、バッチサイズには適当な数値を設定してください。
+
+```bash
+python ./transformers/examples/pytorch/language-modeling/run_clm.py --model_name_or_path=rinna/japanese-gpt2-medium  --train_file=snow_datasets/dataset.txt      --validation_file=snow_datasets/dataset.txt      --do_train  --do_eval --num_train_epochs=10  --save_steps=10000 --per_device_eval_batch_size=1  --output_dir=output/  --use_fast_tokenizer=False --per_device_train_batch_size=1
+```
+
 また、GPUサーバーの使用状況によっては希望のGPUが利用できない可能性があるため、次のようなコードで適宜使用するGPUの番号を指定してみてください。
 ```bash
 export CUDA_VISIBLE_DEVICES=0,1,2
 ```
 
 
-```bash
-python ./transformers/examples/pytorch/language-modeling/run_clm.py --model_name_or_path=rinna/japanese-gpt2-medium  --train_file=snow_datasets/dataset.txt      --validation_file=snow_datasets/dataset.txt      --do_train  --do_eval --num_train_epochs=10  --save_steps=10000 --per_device_eval_batch_size=1  --output_dir=output/  --use_fast_tokenizer=False --per_device_train_batch_size=1
-```
 
