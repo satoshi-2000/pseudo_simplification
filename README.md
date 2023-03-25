@@ -27,6 +27,18 @@ pip install SentencePiece
 python ./transformers/examples/pytorch/language-modeling/run_clm.py --model_name_or_path=rinna/japanese-gpt2-medium  --train_file=snow_datasets/dataset.txt      --validation_file=snow_datasets/dataset.txt      --do_train  --do_eval --num_train_epochs=10  --save_steps=10000 --per_device_eval_batch_size=1  --output_dir=output/  --use_fast_tokenizer=False --per_device_train_batch_size=1
 ```
 
+ただし、元のAutoTokenizerでは上手く読み込めないため、/transformers/examples/pytorch/language-modeling/run_clm.pyの54行目及び340-347行目を次のように変更します。
+```python
+    if model_args.tokenizer_name:
+        #tokenizer = AutoTokenizer.from_pretrained(model_args.tokenizer_name, **tokenizer_kwargs)
+        tokenizer = T5Tokenizer.from_pretrained(model_args.tokenizer_name, **tokenizer_kwargs)
+    elif model_args.model_name_or_path:
+        tokenizer = T5Tokenizer.from_pretrained(model_args.model_name_or_path, **tokenizer_kwargs)
+        #tokenizer = AutoTokenizer.from_pretrained(model_args.model_name_or_path, **tokenizer_kwargs)
+    else:
+        raise ValueError(
+```
+
 また、GPUサーバーの使用状況によっては希望のGPUが利用できない可能性があるため、次のようなコードで適宜使用するGPUの番号を指定してみてください。
 ```bash
 export CUDA_VISIBLE_DEVICES=0,1,2
