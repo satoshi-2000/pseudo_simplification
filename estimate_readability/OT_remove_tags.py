@@ -28,8 +28,8 @@ def remove_tags_and_newlines(input_dir, output_dir):
             
             
 def main():
-    xml_dir = 'OT'
-    txt_dir = 'OT2'
+    input_dir = 'OT'
+    output_dir = 'OT2'
     remove_tags_and_newlines(input_dir, output_dir)
             
 if __name__ == '__main__':
