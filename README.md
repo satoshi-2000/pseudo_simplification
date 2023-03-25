@@ -59,8 +59,11 @@ generate_example.pyを用いて平易化文の生成を行うと、次のよう�
 
 
 # estimate_readability
-OT_remove_tags.pyは、[BCCWJ](https://clrd.ninjal.ac.jp/bccwj/doc.html)に含まれている図書館サブコーパス(OT)に対してxmlタグと改行を除去し、.txt形式で保存するプログラムです。
+OT_remove_tags.pyは、[BCCWJ](https://clrd.ninjal.ac.jp/bccwj/doc.html)に含まれている教科書コーパス(OT)に対してxmlタグと改行を除去し、.txt形式で保存するプログラムです。
 
+OT_labeling.pyは、教科書コーパスに対して、小学校低学年 : 0、中学年 : 1、高学年 : 2、中学生 : 3、高校生 : 4としてラベリングを行うプログラムです。
+
+OT_sep_sentence.pyは、ラベリングされた教科書コーパスに対して、文単位(。区切り)に分割します。その後、ノイズとなる6文字以下や漢字が含まれる割合が75%以上の文を除去します。
 
 # Reference
 [1] 郷原聖士, 綱川隆司, 西田昌史, 西村雅史. BERT によ
