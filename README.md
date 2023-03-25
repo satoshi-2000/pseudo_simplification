@@ -57,7 +57,7 @@ generate_example.pyを用いて平易化文の生成を行うと、次のよう�
 
 
 # estimate_readability
-OT_remove_tags.pyは、BCCWJに含まれている図書館サブコーパス(OT)に対してxmlタグと改行を除去し、.txt形式で保存するプログラムです。
+OT_remove_tags.pyは、[BCCWJ](https://clrd.ninjal.ac.jp/bccwj/doc.html)に含まれている図書館サブコーパス(OT)に対してxmlタグと改行を除去し、.txt形式で保存するプログラムです。
 
 
 # Reference
