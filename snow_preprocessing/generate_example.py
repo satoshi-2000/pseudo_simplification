@@ -11,8 +11,6 @@ def generate_text(prompt):
         model = model.to("cuda")
 
     # テキスト生成のパラメーターの設定
-    length = 100  # 生成するテキストの長さ
-    temperature = 1.0  # テキスト生成の多様性の度合い
 
     # トークナイズされた入力文をモデルに渡してテキスト生成
     token_ids = tokenizer.encode(prompt, return_tensors="pt")
