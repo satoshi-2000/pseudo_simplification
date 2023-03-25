@@ -27,7 +27,7 @@ pip install SentencePiece
 python ./transformers/examples/pytorch/language-modeling/run_clm.py --model_name_or_path=rinna/japanese-gpt2-medium  --train_file=snow_datasets/dataset.txt      --validation_file=snow_datasets/dataset.txt      --do_train  --do_eval --num_train_epochs=10  --save_steps=10000 --per_device_eval_batch_size=1  --output_dir=output/  --use_fast_tokenizer=False --per_device_train_batch_size=1
 ```
 
-ただし、元のAutoTokenizerでは上手く読み込めないため、/transformers/examples/pytorch/language-modeling/run_clm.pyの54行目及び340-347行目を次のように変更します。
+ただし、元のAutoTokenizerでは上手く読み込めないため、[/transformers/examples/pytorch/language-modeling/run_clm.py](https://github.com/huggingface/transformers/blob/main/examples/pytorch/language-modeling/run_clm.py)の54行目及び340-347行目を次のように変更します。
 
 ```python
 from transformers import T5Tokenizer
