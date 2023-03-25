@@ -25,7 +25,13 @@ def remove_tags_and_newlines(input_dir, output_dir):
         with open(os.path.join(output_dir, new_filename), 'w', encoding='utf-8') as f:
             f.write(text)
 
-if __name__ == '__main__':
-    input_dir = 'OT'
-    output_dir = 'OT2'
+            
+            
+def main():
+    xml_dir = 'OT'
+    txt_dir = 'OT2'
     remove_tags_and_newlines(input_dir, output_dir)
+            
+if __name__ == '__main__':
+    main()
+    
