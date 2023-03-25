@@ -32,6 +32,11 @@ python ./transformers/examples/pytorch/language-modeling/run_clm.py --model_name
 export CUDA_VISIBLE_DEVICES=0,1,2
 ```
 
+## 平易文生成例
+generate_example.pyを用いて平易化文の生成を行うと、次のような文が生成されます。
+```bash
+今回の成果は偏に彼の獅子奮迅の働きの賜物でしょう。 彼の勇気ある行動は我々に大きな助けになったことでしょう。
+```
 
 # Reference
 [1] 郷原聖士, 綱川隆司, 西田昌史, 西村雅史. BERT によ
